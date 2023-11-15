@@ -1,20 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class positionSpawn : MonoBehaviour
 {    
     public GameObject[] prefabs;
-    public float posicionX; // La posición en el eje X donde quieres instanciar el prefab
-    public float rangoYMin; // Valor mínimo para la posición en el eje Y
-    public float rangoYMax; // Valor máximo para la posición en el eje Y
+    public float posicionX;
+    public float rangoYMin;
+    public float rangoYMax;
+    private float lastY;
 
     void Start()
     {
-        float manyDinos = Random.Range(1, 11);
+        float manyDinos = UnityEngine.Random.Range(1, 11);
+        lastY = 1;
         for (int i = 0; i < manyDinos; i++)
         {         
-            int randomIndex = Random.Range(0, prefabs.Length);
+            int randomIndex = UnityEngine.Random.Range(0, prefabs.Length);
             if (randomIndex == 3)
             {//Indica que vuela
                 rangoYMax = 130;
@@ -25,15 +28,14 @@ public class positionSpawn : MonoBehaviour
                 rangoYMax = 0;
                 rangoYMin = -130;
             }
-            float posicionY = Random.Range(rangoYMin, rangoYMax);
-            // Combina la posición en X fija con la posición aleatoria en Y
+            float posicionY = (float)(Math.Round(UnityEngine.Random.Range(rangoYMin / 20f, rangoYMax / 20f)) * 20f);
+            if (lastY==posicionY)
+            {
+                posicionY += 10;
+            }
             Vector3 posicionDeseada = new Vector3(posicionX, posicionY, 0f);
-
-            // Instancia el prefab en la posición deseada con la rotación predeterminada
             GameObject instanciaPrefab = Instantiate(prefabs[randomIndex], posicionDeseada, Quaternion.identity);
-
-            // Puedes hacer más cosas con la instanciaPrefab si es necesario
-            // Por ejemplo, modificar propiedades del objeto instanciado.   
+            lastY = posicionY;
         }
     }
 }
