@@ -16,8 +16,7 @@ public class positionSpawn : MonoBehaviour
         listY=new float[(int)manyDinos];
         int contadorSprite=0;
         for (int i = 0; i < manyDinos; i++)
-        {         
-                        
+        {                                 
             if (contadorSprite == 3)
             {//Indica que vuela
                 rangoYMax = 130;
@@ -34,14 +33,14 @@ public class positionSpawn : MonoBehaviour
             {
                 posicionY = Mathf.Round(UnityEngine.Random.Range(rangoYMin, rangoYMax) / 20f) * 20f;
             } while (listY.Contains(posicionY));
+            
 
-            listY.Append(posicionY);
+            //listY.Append(posicionY);
             listY[i] = posicionY;
 
             Vector3 setPosition = new Vector3(posicionX, posicionY, 0f);
             GameObject instanciaPrefab = Instantiate(prefabs[contadorSprite], setPosition, Quaternion.identity);
             contadorSprite = (contadorSprite != 3) ? contadorSprite + 1 : 0;
-            //listY.Append(posicionY);
         }
     }
 }
