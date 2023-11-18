@@ -264,6 +264,7 @@ MonoBehaviour:
   posicionX: -430
   rangoYMin: -150
   rangoYMax: 115
+  listY: []
 --- !u!1 &1263751719
 GameObject:
   m_ObjectHideFlags: 0
