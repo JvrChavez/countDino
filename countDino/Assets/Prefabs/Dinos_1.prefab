@@ -127,6 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidad: 200
+  spawnController: {fileID: 0}
 --- !u!95 &5336963704677213342
 Animator:
   serializedVersion: 7
