@@ -17,24 +17,16 @@ public class DinoMovement : MonoBehaviour
     }
     void Update()
     {
-        //Controlamos la direccion del movimiento en base al Flag de 'moviendoDerecha'
         rb.velocity = right ? new Vector2(velocidad, rb.velocity.y) : new Vector2(-velocidad, rb.velocity.y);
-
-
-        // Obtener la posición del sprite
         Vector3 pantallaPos = Camera.main.WorldToScreenPoint(transform.position);
-
-        // Si el sprite choca con el borde derecho o izquierdo de la pantalla
-        if (pantallaPos.x >= Screen.width)
-        {
-            // Cambiar la dirección del sprite
-            right = false;
-            // Voltear el sprite horizontalmente (cambiar la escala)         
-            spriteRenderer.flipX = true;
-        }
         if (pantallaPos.x < posInicial.x)
         {
             Destroy(this.gameObject);
         }
+    }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        right = false;      
+        spriteRenderer.flipX = true;
     }
 }

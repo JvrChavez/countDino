@@ -19,12 +19,6 @@ public class GameManager : MonoBehaviour
     public Text[] txts;
     public int correct;
     public string[] listTxt;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-    // Update is called once per frame
     void Update()
     {
         ifStart();
@@ -57,7 +51,6 @@ public class GameManager : MonoBehaviour
             btns[indiceBotonCorrecto].onClick.AddListener(BotonCorrecto);
             listTxt[indiceBotonCorrecto] = txts[indiceBotonCorrecto].text;
 
-            // Asignar el listener de BotonIncorrecto a los demás botones
             for (int i = 0; i < btns.Length; i++)
             {
                 btns[i].interactable = true;
@@ -108,6 +101,10 @@ public class GameManager : MonoBehaviour
     void BotonIncorrecto()
     {
         Debug.Log("Incorrecto.");
+        foreach (Button btn in btns)
+        {
+            btn.onClick.RemoveAllListeners();
+        }
         gameState = GameState.Lose;
     }
     void methodExit()

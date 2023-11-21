@@ -52,9 +52,7 @@ public class positionSpawn : MonoBehaviour
     }
     IEnumerator EsperarYCambiarEstado()
     {
-        yield return new WaitForSeconds(8);
-
-        // Cambiar el estado a StartAnswer después de esperar 10 segundos
+        yield return new WaitForSeconds(8);//Espera 8 segundos.
         gameManagerScript.gameState = GameState.StartAnswer;
     }
 }

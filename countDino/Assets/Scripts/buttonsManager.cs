@@ -13,8 +13,4 @@ public class buttonsManager : MonoBehaviour
         // Obtener el script GameManager desde el objeto gameManager
         gameManagerScript = gameManager.GetComponent<GameManager>();
     }
-    void Update()
-    {
-    }
-    
 }
