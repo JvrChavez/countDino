@@ -5,40 +5,16 @@ using UnityEngine.UI;
 
 public class buttonsManager : MonoBehaviour
 {
-    public Button [] btns;
-    public Text[] txts;
-
+    public GameObject gameManager;
+    private GameManager gameManagerScript;
+    
     void Start()
     {
-
-        foreach (Button btn in btns)
-        {
-            btn.interactable = true;
-        }
-        // Seleccionar aleatoriamente el índice del botón correcto
-        int indiceBotonCorrecto = Random.Range(0, btns.Length);
-        txts[indiceBotonCorrecto].text = "C";
-        btns[indiceBotonCorrecto].onClick.AddListener(BotonCorrecto);
-
-        // Asignar el listener de BotonIncorrecto a los demás botones
-        for (int i = 0; i < btns.Length; i++)
-        {
-            btns[i].interactable = true;
-            if (i != indiceBotonCorrecto)
-            {
-                txts[i].text = "I";
-                btns[i].onClick.AddListener(BotonIncorrecto);
-            }
-        }
+        // Obtener el script GameManager desde el objeto gameManager
+        gameManagerScript = gameManager.GetComponent<GameManager>();
     }
-
-    void BotonCorrecto()
+    void Update()
     {
-        Debug.Log("¡Correcto!");
     }
-
-    void BotonIncorrecto()
-    {
-        Debug.Log("Incorrecto. Intenta de nuevo.");
-    }
+    
 }

@@ -9,15 +9,12 @@ public class DinoMovement : MonoBehaviour
     private bool right = true;
     private SpriteRenderer spriteRenderer;
     private Vector3 posInicial;
-    // Llamado al inicio
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent <SpriteRenderer>();
         posInicial = Camera.main.WorldToScreenPoint(transform.position);
     }
-
-    // Llamado en cada fotograma
     void Update()
     {
         //Controlamos la direccion del movimiento en base al Flag de 'moviendoDerecha'
