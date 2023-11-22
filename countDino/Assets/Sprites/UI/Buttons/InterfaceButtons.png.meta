@@ -572,7 +572,26 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      InterfaceButtons_0: -8094066344895702763
+      InterfaceButtons_1: -75291619209728919
+      InterfaceButtons_10: 835196316881506212
+      InterfaceButtons_11: 8448521016816096919
+      InterfaceButtons_12: 389896078295447245
+      InterfaceButtons_13: 7892754860714489499
+      InterfaceButtons_14: 5099943735116828885
+      InterfaceButtons_15: 5651027909101834059
+      InterfaceButtons_16: -2890573926057948327
+      InterfaceButtons_17: 561565110675599407
+      InterfaceButtons_18: -3239377282135123135
+      InterfaceButtons_2: -7357181197464638261
+      InterfaceButtons_3: -8881115432597080870
+      InterfaceButtons_4: -4523599516359579607
+      InterfaceButtons_5: 4037072536717692220
+      InterfaceButtons_6: 955165440614590995
+      InterfaceButtons_7: 1389141619327833777
+      InterfaceButtons_8: 975641361060655799
+      InterfaceButtons_9: 4879539846285030918
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
