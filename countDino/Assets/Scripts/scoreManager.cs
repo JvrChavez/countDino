@@ -42,6 +42,18 @@ public class scoreManager : MonoBehaviour
             pointsText.text = points.ToString();
             gameManagerScript.gameState = GameState.Ended;
         }
-        
+        if (gameManagerScript.gameState == GameState.Ready)
+        {
+            int maxPoints = PlayerPrefs.GetInt("Max", 0);
+            if (points >= maxPoints)
+            {
+                maxPoints = points;
+                PlayerPrefs.SetInt("Max", maxPoints);
+            }
+            maxPointsText.text = "BEST: " + maxPoints.ToString();
+            points = 0;
+            pointsText.text = points.ToString();
+        }
+
     }
 }

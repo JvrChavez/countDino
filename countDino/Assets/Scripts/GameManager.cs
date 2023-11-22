@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour
         {
             gameState = GameState.StartRun;
             UIEnd.SetActive(false);
+            AudioManager.Instance.PlayMusic();
         }
     }
     void SpawnButtons()
@@ -98,6 +99,7 @@ public class GameManager : MonoBehaviour
             btn.onClick.RemoveAllListeners();
         }
         scoreManager.Instance.IncreasePoints();
+        AudioManager.Instance.PlaySound("Point");
         gameState = GameState.StartRun;
     }
     void BotonIncorrecto()
@@ -105,8 +107,10 @@ public class GameManager : MonoBehaviour
         Debug.Log("Incorrecto.");
         foreach (Button btn in btns)
         {
-            btn.onClick.RemoveAllListeners();
+            btn.onClick.RemoveAllListeners();        
         }
+        AudioManager.Instance.PlaySound("spongebob-fail");
+        AudioManager.Instance.StopMusic();
         gameState = GameState.Lose;
     }
     void methodExit()
