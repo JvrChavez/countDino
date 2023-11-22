@@ -18,7 +18,6 @@ public class GameManager : MonoBehaviour
     public Button[] btns;
     public Text[] txts;
     public int correct;
-    public string[] listTxt;
     void Update()
     {
         ifStart();
@@ -27,12 +26,16 @@ public class GameManager : MonoBehaviour
     }
     void ifStart()
     {
-        if ((gameState==GameState.Ready || gameState == GameState.Ended) && Input.GetMouseButtonDown(0))
+        if (gameState==GameState.Ready && Input.GetMouseButtonDown(0))
         {
             gameState = GameState.StartRun;
             uiReady.SetActive(false);
-            UIEnd.SetActive(false);
             UIScore.SetActive(true);
+        }
+        if (gameState == GameState.Ended && Input.GetMouseButtonDown(0))
+        {
+            gameState = GameState.StartRun;
+            UIEnd.SetActive(false);
         }
     }
     void SpawnButtons()
@@ -44,7 +47,7 @@ public class GameManager : MonoBehaviour
             {
                 btn.interactable = true;
             }
-            listTxt = new string[4];
+            string [] listTxt = new string[4];
             // Seleccionar aleatoriamente el índice del botón correcto
             int indiceBotonCorrecto = Random.Range(0, btns.Length);
             txts[indiceBotonCorrecto].text = correct.ToString();
@@ -56,7 +59,6 @@ public class GameManager : MonoBehaviour
                 btns[i].interactable = true;
                 if (i != indiceBotonCorrecto)
                 {
-                    txts[i].text = "I";
                     do
                     {
                         string randomNum;

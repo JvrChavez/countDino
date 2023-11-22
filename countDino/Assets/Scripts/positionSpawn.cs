@@ -11,7 +11,6 @@ public class positionSpawn : MonoBehaviour
     private GameManager gameManagerScript;
     public GameObject[] prefabsDinos,prefabsBtns;
     public float posicionX, rangoYMin, rangoYMax;
-    public float[] listY;
     private float manyDinos;
     void Start()
     {
@@ -25,9 +24,9 @@ public class positionSpawn : MonoBehaviour
     {
         if (gameManagerScript.gameState == GameState.StartRun)
         {
-            manyDinos = UnityEngine.Random.Range(1, 11);
+            manyDinos = UnityEngine.Random.Range(1, 6);
             gameManagerScript.correct = (int)manyDinos;
-            listY = new float[(int)manyDinos];
+            float[] listY = new float[(int)manyDinos];
             int contadorSprite = 0;
             for (int i = 0; i < manyDinos; i++)
             {
