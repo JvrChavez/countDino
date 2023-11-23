@@ -9,7 +9,7 @@ public class positionSpawn : MonoBehaviour
 {
     public GameObject gameManager;
     private GameManager gameManagerScript;
-    public GameObject[] prefabsDinos,prefabsBtns;
+    public GameObject[] prefabsDinos;
     public float posicionX, rangoYMin, rangoYMax;
     private float manyDinos;
     void Start()

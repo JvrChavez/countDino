@@ -150,7 +150,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -1792,7 +1792,7 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 50
+    m_MaxSize: 100
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -1880,11 +1880,6 @@ MonoBehaviour:
   - {fileID: 6033980928335580050, guid: 6bfbd9c4ca8a54344bea76d6873615b0, type: 3}
   - {fileID: 1617438523698158085, guid: 5ca03f1d05144204ba67407e0b0a3b6f, type: 3}
   - {fileID: 2936653350317127502, guid: 141e331d45a1cda459e7a0ede7f37d72, type: 3}
-  prefabsBtns:
-  - {fileID: 1071702111630091660, guid: e95e7334ed405b44d8441ca875cf6a6f, type: 3}
-  - {fileID: 8326557834160731432, guid: 861c8a5a4dda6164e971fee0f5086998, type: 3}
-  - {fileID: 7098060153098681791, guid: 7a650aae48e0cdb429bb4125e50fef26, type: 3}
-  - {fileID: 3022977364434793837, guid: e9642a1c70237ce46b01d160cda08248, type: 3}
   posicionX: -430
   rangoYMin: -150
   rangoYMax: 115

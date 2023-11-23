@@ -54,6 +54,5 @@ public class scoreManager : MonoBehaviour
             points = 0;
             pointsText.text = points.ToString();
         }
-
     }
 }
